@@ -1,0 +1,52 @@
+//fontsize and line height
+@mixin fontSize($fz, $lh: 1.2em) {
+  font-size: $fz;
+  line-height: $lh;
+}
+
+//buttons
+%buttonText {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-align: center;
+  font-size: 16px;
+}
+@mixin button($color: $primaryGreen) {
+  @extend %buttonText;
+  border-radius: $borerRadius;
+  background: $color;
+  border-color: $color;
+  &:hover {
+    border-color: darken($color, 20%);
+    background: darken($color, 20%);
+  }
+}
+
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//layout stuff
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//flexRow MIXIN
+@mixin flexRow($alignH: space-between) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $alignH;
+  align-items: center;
+}
+//columnGrid MIXIN
+@mixin columnGrid($columnCount, $gapOnMobile, $alignH: space-between) {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat($columnCount, 1fr);
+  grid-column-gap: $gap;
+  justify-content: $alignH;
+  @media (max-width: $smallScreen) {
+    grid-template-columns: 100%;
+    grid-row-gap: $gapOnMobile;
+  }
+}

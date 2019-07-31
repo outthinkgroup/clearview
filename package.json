@@ -1,0 +1,15 @@
+{
+  "name": "clearview2019",
+  "version": "1.0.0",
+  "description": "theme for clearviewsoftware",
+  "main": "main.js",
+  "author": "outthinkgroup",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel main.js",
+    "build": "parcel build main.js"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}

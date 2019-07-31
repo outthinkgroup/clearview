@@ -1,0 +1,104 @@
+/* base styles for simple elements
+
+*/
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//random variables
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//border-radius VAR
+$borerRadius: 8px;
+//baseFontSize VAR
+$baseFontSize: 18px;
+//box-shadow VAR
+$boxShadow: 0 3px 5px rgba($black, 0.08), 0 7px 7px rgba($black, 0.08);
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+
+//typography
+///////--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//font family
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: $heading;
+}
+//set black
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $black;
+}
+
+//sizing
+body,
+p {
+  @include fontSize($baseFontSize, 1.5em);
+}
+
+h1 {
+  @include fontSize(48.01px);
+}
+h2 {
+  @include fontSize(32px);
+}
+h3 {
+  @include fontSize(24px);
+}
+h4 {
+  @include fontSize(20px);
+}
+h5 {
+  letter-spacing: 1px;
+  @include fontSize(14px);
+}
+
+//font weight
+h5,
+.bold,
+strong {
+  font-weight: 700;
+}
+
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//links
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+a {
+  color: $primaryBlue;
+  text-decoration: none;
+  &:hover {
+    color: darken($primaryBlue, 20%);
+    text-decoration: underline;
+  }
+}
+* {
+  @if (currentColor == white) {
+    & > a {
+      // if the color around the link is white make the link be white too.
+      color: white;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//buttons
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+
+.button {
+  box-shadow: $boxShadow;
+  padding: 8px 24px;
+  @include button(); //default color is green
+}
+.button-large {
+  @extend .button;
+  padding: 15px 55px;
+}
