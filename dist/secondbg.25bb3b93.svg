@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="transform:scale(1.01);" xmlns:xlink="http://www.w3.org/1999/xlink" width="1937.394" height="879.334" viewBox="0 5 1937.394 879.334">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="1937.394" height="879.334" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="bg_3" data-name="bg&gt;3" clip-path="url(#clip-path)">
+    <g id="Layer_1_copy" transform="translate(0.812)">
+      <path id="Path_859" data-name="Path 859" d="M1935.769,456.479v22.139C857.586,519.669,787.515,749.392,0,787.216V682.976C809.6,676.433,833.692,461.319,1935.769,456.479Z" transform="translate(0 91.266)" fill="none" stroke="#00a34f" stroke-miterlimit="10" stroke-width="1.624"/>
+      <path id="Path_860" data-name="Path 860" d="M1935.769,439.911v35.122C832.582,509.361,820.686,745.18,0,771.172V683.065C809.6,676.433,833.692,444.751,1935.769,439.911Z" transform="translate(0 91.266)" fill="#00a34f"/>
+      <path id="Path_861" data-name="Path 861" d="M1935.769,0V534.12C833.692,539.251,809.6,767.3,0,774.241V0Z" fill="#004c7a"/>
+    </g>
+  </g>
+</svg>

@@ -1,9 +1,20 @@
+@import "./reset.scss";
+
+@import "./mixins";
+
+@import "./variables/breakpoints.scss";
 @import "./variables/colors.scss";
 @import "./variables/typeography.scss";
 @import "./variables/spacing.scss";
+@import "./variables/shadows.scss";
+@import "./variables/movement.scss";
 
-@import "./variables/breakpoints.scss";
-
-@import "./reset.scss";
-@import "./mixins";
 @import "./base.scss";
+
+@import "./components/header.scss";
+@import "./components/hero-block.scss";
+@import "./components/supporting-card.scss";
+@import "./components/two-column-layout.scss";
+@import "./components/bottom-cta.scss";
+@import "./components/.feature-list-grid.scss";
+@import "./components/overview-feature.scss";

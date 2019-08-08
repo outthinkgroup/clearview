@@ -1,0 +1,25 @@
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--////
+//page header
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+
+.page__hero > .fl-row-content-wrap {
+  background-image: url(/images/secondbg.svg); // the background image for this row.
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  * {
+    color: white;
+  }
+  h1 {
+    color: white;
+    font-size: 50px;
+  }
+  .cv-btn {
+    & span {
+      color: white;
+    }
+  }
+}
+body .fl-builder-content .page__hero > .fl-row-content-wrap {
+  padding: 150px 20px 30px;
+}

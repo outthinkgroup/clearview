@@ -189,9 +189,89 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"scripts/main.js":[function(require,module,exports) {
-console.log("hello wold");
-},{}],"main.js":[function(require,module,exports) {
+},{"/Users/joshkennedy00/sites/dev/clearviewsoftware/app/public/wp-content/themes/clearview2019/images/clearviewlogo.svg":[["clearviewlogo.8a3dbe42.svg","images/clearviewlogo.svg"],"images/clearviewlogo.svg"],"/Users/joshkennedy00/sites/dev/clearviewsoftware/app/public/wp-content/themes/clearview2019/images/secondbg.svg":[["secondbg.25bb3b93.svg","images/secondbg.svg"],"images/secondbg.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"scripts/subnav-animate.js":[function(require,module,exports) {
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function initAnimateSubMenu() {
+  //test if there is a sub menu if not returns
+  var subnav = document.querySelector(".sub-menu");
+
+  if (!subnav) {
+    return null;
+  } //vars
+  //creates the animating bg
+
+
+  var headerBar = document.querySelector("#site-navigation");
+  var triggers = document.querySelectorAll(".main-header-menu > .menu-item");
+  var bgEl = document.createElement("div");
+  bgEl.classList.add("animate-sub-menu-bg");
+  var bgWrapper = document.createElement("div");
+  bgWrapper.classList.add("bg-root");
+  headerBar.appendChild(bgWrapper);
+  bgWrapper.appendChild(bgEl);
+  var background = bgEl; // easier to recognize
+  //when mouse enters trigger
+
+  function handleEnter(e) {
+    //need to override wp style for their dropdown
+    e.target.classList.add("trigger-enter"); //console.log(e.target.classList);
+
+    setTimeout(function () {
+      return e.target.classList.add("trigger-enter-active");
+    }, 150); //console.log(document.querySelector(".trigger-enter"));
+
+    var dropdown = e.target.querySelector(".sub-menu");
+    var headerBarCoords = headerBar.getBoundingClientRect();
+
+    if (!dropdown) {
+      console.log("nope");
+      return null;
+    }
+
+    bgWrapper.setAttribute("data-active", true);
+    var dropdownCoords = dropdown.getBoundingClientRect();
+    var bgNewCoords = {
+      width: dropdownCoords.width,
+      height: dropdownCoords.height,
+      top: dropdownCoords.top - headerBarCoords.top,
+      left: dropdownCoords.left - headerBarCoords.left
+    };
+    background.style.setProperty("width", "".concat(bgNewCoords.width, "px"));
+    background.style.setProperty("height", "".concat(bgNewCoords.height, "px"));
+    background.style.setProperty("transform", "translate(".concat(bgNewCoords.left, "px, ").concat(bgNewCoords.top, "px)"));
+  } //when mouse leaves trigger
+
+
+  function handleLeave() {
+    console.log("leave");
+    this.classList.remove(".trigger-enter");
+    this.classList.remove(".trigger-enter-active");
+    bgWrapper.removeAttribute("data-active");
+  } //listeners
+
+
+  _toConsumableArray(triggers).forEach(function (trigger) {
+    //gives each menu item two events
+    trigger.addEventListener("mouseenter", function (e) {
+      return handleEnter(e);
+    });
+    trigger.addEventListener("mouseleave", handleLeave);
+  });
+}
+
+window.addEventListener("load", initAnimateSubMenu);
+},{}],"scripts/main.js":[function(require,module,exports) {
+"use strict";
+
+require("./subnav-animate");
+},{"./subnav-animate":"scripts/subnav-animate.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 require("./styles/main.scss");
@@ -225,7 +305,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55237" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64259" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -401,4 +481,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
-//# sourceMappingURL=/main.js.map
+//# sourceMappingURL=https://clearviewsoftware.local/wp-content/themes/clearview2019/dist/main.js.map

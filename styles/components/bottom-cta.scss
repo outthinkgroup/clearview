@@ -1,0 +1,5 @@
+.bottom-cta {
+  .btn-row .fl-col-content {
+    @include flexRow(center);
+  }
+}

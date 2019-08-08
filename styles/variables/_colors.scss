@@ -1,3 +1,5 @@
+/* if you update the scss make sure you update the css var */
+
 //Primary
 $primaryBlue: #0064a3;
 $primaryGreen: #00a34f;
@@ -14,3 +16,34 @@ $lightBlue: #f2f6f9;
 $black: #0b0b0b;
 $mediumGrey: #707070;
 $lightGrey: #dfdede;
+
+:root {
+  --primaryBlue: #0064a3;
+  --primaryGreen: #00a34f;
+  //secondary
+  --navy: #004c7a;
+  --purple: #9a00b3;
+  --red: #f00053;
+  --yellow: #f3c100;
+  //variants
+  --lightBlue: #f2f6f9;
+  --black: #0b0b0b;
+  --mediumGrey: #707070;
+  --lightGrey: #dfdede;
+}
+
+.color-yellow {
+  --color: var(--yellow);
+}
+.color-primaryGreen {
+  --color: var(--primaryGreen);
+}
+.color-red {
+  --color: var(--red);
+}
+.color-primaryBlue {
+  --color: var(--primaryBlue);
+}
+.color-purple {
+  --color: var(--purple);
+}

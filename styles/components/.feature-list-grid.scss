@@ -1,0 +1,72 @@
+//
+.feature-list-grid .fl-col-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  > .fl-col {
+    min-width: 250px;
+  }
+}
+///TODO will need to add rule for @supports grid
+.feature-list-grid__item > div {
+  --offset: 30px;
+  display: grid;
+  grid-template-columns: var(--offset) var(--offset) 1fr;
+  //justify-items: center;
+  align-items: center;
+  > div {
+    grid-row-start: 1;
+  }
+  .fl-module-uabb-heading {
+    grid-column: 2/-1;
+    padding-left: calc(var(--offset) + 20px);
+  }
+  .fl-module-html {
+    grid-column: 1/3;
+    z-index: 1;
+  }
+}
+
+.feature-list-grid__item {
+  margin: 0 20px 40px;
+  //deals with setting the color
+  --color: var(--primaryBlue);
+  &.color-green {
+    --color: var(--primaryGreen);
+  }
+  &.color-red {
+    --color: var(--red);
+  }
+  &.color-yellow {
+    --color: var(--yellow);
+  }
+  &.color-purple {
+    --color: var(--purple);
+  }
+
+  //style the background
+  .fl-module-uabb-heading {
+    padding: 10px;
+    background: white;
+    border-radius: $borderRadius;
+    box-shadow: $smallShadow;
+    z-index: 0;
+    > .fl-module-content {
+      margin: 0;
+    }
+
+    //styling the text
+    h3 {
+      color: var(--color) !important;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .uabb-subheading {
+      margin-top: 0;
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}

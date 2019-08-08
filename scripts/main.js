@@ -1,1 +1,1 @@
-console.log("hello wold");
+import "./subnav-animate";

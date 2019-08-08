@@ -12,19 +12,21 @@
   &:hover {
     text-decoration: none;
   }
-  letter-spacing: 1px;
-  font-weight: 900;
+  letter-spacing: 0.025em;
+  font-weight: 700;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
 }
 @mixin button($color: $primaryGreen) {
   @extend %buttonText;
-  border-radius: $borerRadius;
+  line-height: 1;
+  transition: all $timingQuick $easing;
+  border-radius: $borderRadius;
   background: $color;
   border-color: $color;
   &:hover {
-    border-color: darken($color, 20%);
-    background: darken($color, 20%);
+    box-shadow: $smallShadowHover;
+    transform: translateY(-1px);
   }
 }
 
@@ -39,11 +41,11 @@
   align-items: center;
 }
 //columnGrid MIXIN
-@mixin columnGrid($columnCount, $gapOnMobile, $alignH: space-between) {
+@mixin columnGrid($columnCount: 2, $gapOnMobile: 20px, $alignH: space-between) {
   display: grid;
   width: 100%;
   grid-template-columns: repeat($columnCount, 1fr);
-  grid-column-gap: $gap;
+  grid-column-gap: $gapOnMobile;
   justify-content: $alignH;
   @media (max-width: $smallScreen) {
     grid-template-columns: 100%;

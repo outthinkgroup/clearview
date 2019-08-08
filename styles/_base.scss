@@ -5,13 +5,17 @@
 //random variables
 //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
 //border-radius VAR
-$borerRadius: 8px;
+$borderRadius: 4px;
+$cardBorderRadius: 8px;
 //baseFontSize VAR
 $baseFontSize: 18px;
-//box-shadow VAR
-$boxShadow: 0 3px 5px rgba($black, 0.08), 0 7px 7px rgba($black, 0.08);
-//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
 
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//Selector Overrides
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+$overrides: "body .fl-builder-content .fl-row"; //outputs these selectors to get over beaverbuilders defaults
+
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
 //typography
 ///////--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
 //font family
@@ -27,13 +31,15 @@ a {
 }
 //set black
 h1,
-h2,
 h3,
 h4,
 h5,
 h6,
 p {
   color: $black;
+}
+#{$overrides} h2 {
+  color: $primaryBlue;
 }
 
 //sizing
@@ -46,6 +52,8 @@ h1 {
   @include fontSize(48.01px);
 }
 h2 {
+  font-weight: 700;
+
   @include fontSize(32px);
 }
 h3 {
@@ -69,7 +77,7 @@ strong {
 //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
 //links
 //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
-a {
+body a {
   color: $primaryBlue;
   text-decoration: none;
   &:hover {
@@ -92,13 +100,88 @@ a {
 //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
 //buttons
 //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
-
-.button {
-  box-shadow: $boxShadow;
+a.cv-btn,
+.cv-btn a,
+#{$overrides} .cv-btn a {
+  box-shadow: $smallShadow;
   padding: 8px 24px;
   @include button(); //default color is green
+  & * {
+    color: white;
+  }
 }
-.button-large {
-  @extend .button;
+a.cv-btn-large,
+#{$overrides} .cv-btn-large a {
+  @extend .cv-btn;
   padding: 15px 55px;
+}
+
+//change colors
+a.cv-btn,
+.cv-btn a,
+#{$overrides} .cv-btn {
+  &.cv-btn-white {
+    a {
+      @include button(white);
+      & * {
+        color: $primaryBlue;
+      }
+    }
+  }
+  &.cv-btn-lightBlue {
+    a {
+      @include button($lightBlue);
+      & * {
+        color: $primaryBlue;
+      }
+    }
+  }
+  &.cv-btn-red {
+    a {
+      @include button($red);
+    }
+  }
+  &.cv-btn-yellow {
+    a {
+      @include button($yellow);
+    }
+  }
+  &.cv-btn-blue {
+    a {
+      @include button($primaryBlue);
+    }
+  }
+  &.button--learn-more {
+    a {
+      @include button(var(--color));
+      //padding: 16px 16px;
+    }
+  }
+}
+
+//--/--/--/--/--/--/--/--/--/--/--//
+//Quick helper classes to add quick styling
+//--/--/--/--/--/--/--/--/--/--/--//
+.shadow-sml {
+  box-shadow: $smallShadow;
+}
+.center {
+  text-align: center;
+}
+//center everything only on mobile
+.center--mobile,
+.center--mobile * {
+  @media (max-width: $smallScreen) {
+    text-align: center;
+  }
+}
+
+//--/--/--/--/--/--/--/--/--/--/--//
+//beaverbuilder resets
+//universally set defaults to my styles
+//--/--/--/--/--/--/--/--/--/--/--//
+.fl-col-small {
+  @media (max-width: $smallScreen) {
+    max-width: $mobileMaxWidth;
+  }
 }

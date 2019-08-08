@@ -356,17 +356,100 @@ template {
   display: none;
 }
 
-.button, .button-large {
+a.cv-btn.button--learn-more a, a.button--learn-more.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.button--learn-more a,
+.cv-btn a.button--learn-more a,
+a.cv-btn-large a.button--learn-more a,
+body .fl-builder-content .fl-row .cv-btn.button--learn-more a,
+body .fl-builder-content .fl-row a.button--learn-more.cv-btn-large a, a.cv-btn.cv-btn-blue a, a.cv-btn-blue.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-blue a,
+.cv-btn a.cv-btn-blue a,
+a.cv-btn-large a.cv-btn-blue a,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-blue a,
+body .fl-builder-content .fl-row a.cv-btn-blue.cv-btn-large a, a.cv-btn.cv-btn-yellow a, a.cv-btn-yellow.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-yellow a,
+.cv-btn a.cv-btn-yellow a,
+a.cv-btn-large a.cv-btn-yellow a,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-yellow a,
+body .fl-builder-content .fl-row a.cv-btn-yellow.cv-btn-large a, a.cv-btn.cv-btn-red a, a.cv-btn-red.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-red a,
+.cv-btn a.cv-btn-red a,
+a.cv-btn-large a.cv-btn-red a,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-red a,
+body .fl-builder-content .fl-row a.cv-btn-red.cv-btn-large a, a.cv-btn.cv-btn-lightBlue a, a.cv-btn-lightBlue.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-lightBlue a,
+.cv-btn a.cv-btn-lightBlue a,
+a.cv-btn-large a.cv-btn-lightBlue a,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-lightBlue a,
+body .fl-builder-content .fl-row a.cv-btn-lightBlue.cv-btn-large a, a.cv-btn.cv-btn-white a, a.cv-btn-white.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-white a,
+.cv-btn a.cv-btn-white a,
+a.cv-btn-large a.cv-btn-white a,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-white a, a.cv-btn, a.cv-btn-large,
+body .fl-builder-content .fl-row .cv-btn-large a,
+.cv-btn a,
+a.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn a {
   color: white;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 1px;
-  font-weight: 900;
+  letter-spacing: 0.025em;
+  font-weight: 700;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
 }
-.button:hover, .button-large:hover {
+a.cv-btn.button--learn-more a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.button--learn-more a:hover,
+.cv-btn a.button--learn-more a:hover, a.cv-btn.cv-btn-blue a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-blue a:hover,
+.cv-btn a.cv-btn-blue a:hover, a.cv-btn.cv-btn-yellow a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-yellow a:hover,
+.cv-btn a.cv-btn-yellow a:hover, a.cv-btn.cv-btn-red a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-red a:hover,
+.cv-btn a.cv-btn-red a:hover, a.cv-btn.cv-btn-lightBlue a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-lightBlue a:hover,
+.cv-btn a.cv-btn-lightBlue a:hover, a.cv-btn.cv-btn-white a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-white a:hover,
+.cv-btn a.cv-btn-white a:hover, a.cv-btn:hover, a.cv-btn-large:hover,
+body .fl-builder-content .fl-row .cv-btn-large a:hover,
+.cv-btn a:hover,
+a.cv-btn-large a:hover,
+body .fl-builder-content .fl-row .cv-btn a:hover {
   text-decoration: none;
+}
+
+/* if you update the scss make sure you update the css var */
+:root {
+  --primaryBlue: #0064a3;
+  --primaryGreen: #00a34f;
+  --navy: #004c7a;
+  --purple: #9a00b3;
+  --red: #f00053;
+  --yellow: #f3c100;
+  --lightBlue: #f2f6f9;
+  --black: #0b0b0b;
+  --mediumGrey: #707070;
+  --lightGrey: #dfdede;
+}
+
+.color-yellow {
+  --color: var(--yellow);
+}
+
+.color-primaryGreen {
+  --color: var(--primaryGreen);
+}
+
+.color-red {
+  --color: var(--red);
+}
+
+.color-primaryBlue {
+  --color: var(--primaryBlue);
+}
+
+.color-purple {
+  --color: var(--purple);
 }
 
 /* base styles for simple elements
@@ -384,13 +467,16 @@ a {
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
 h6,
 p {
   color: #0b0b0b;
+}
+
+body .fl-builder-content .fl-row h2 {
+  color: #0064a3;
 }
 
 body,
@@ -405,6 +491,7 @@ h1 {
 }
 
 h2 {
+  font-weight: 700;
   font-size: 32px;
   line-height: 1.2em;
 }
@@ -431,29 +518,567 @@ strong {
   font-weight: 700;
 }
 
-a {
+body a {
   color: #0064a3;
   text-decoration: none;
 }
-a:hover {
+body a:hover {
   color: #00253d;
   text-decoration: underline;
 }
 
-.button, .button-large {
-  box-shadow: 0 3px 5px rgba(11, 11, 11, 0.08), 0 7px 7px rgba(11, 11, 11, 0.08);
+a.cv-btn, a.cv-btn-large,
+body .fl-builder-content .fl-row .cv-btn-large a,
+.cv-btn a,
+a.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn a {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 8px 24px;
-  border-radius: 8px;
+  line-height: 1;
+  transition: all 0.15s cubic-bezier(0.5, 0, 0.5, 1);
+  border-radius: 4px;
   background: #00a34f;
   border-color: #00a34f;
 }
-.button:hover, .button-large:hover {
-  border-color: #003d1e;
-  background: #003d1e;
+a.cv-btn:hover, a.cv-btn-large:hover,
+body .fl-builder-content .fl-row .cv-btn-large a:hover,
+.cv-btn a:hover,
+a.cv-btn-large a:hover,
+body .fl-builder-content .fl-row .cv-btn a:hover {
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+a.cv-btn *, a.cv-btn-large *,
+body .fl-builder-content .fl-row .cv-btn-large a *,
+.cv-btn a *,
+body .fl-builder-content .fl-row .cv-btn a * {
+  color: white;
 }
 
-.button-large {
+a.cv-btn-large,
+body .fl-builder-content .fl-row .cv-btn-large a {
   padding: 15px 55px;
 }
 
-/*# sourceMappingURL=/main.css.map */
+a.cv-btn.cv-btn-white a, a.cv-btn-white.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-white a,
+.cv-btn a.cv-btn-white a,
+a.cv-btn-large a.cv-btn-white a,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-white a {
+  line-height: 1;
+  transition: all 0.15s cubic-bezier(0.5, 0, 0.5, 1);
+  border-radius: 4px;
+  background: white;
+  border-color: white;
+}
+a.cv-btn.cv-btn-white a:hover, a.cv-btn-white.cv-btn-large a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-white a:hover,
+.cv-btn a.cv-btn-white a:hover,
+a.cv-btn-large a.cv-btn-white a:hover,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-white a:hover,
+body .fl-builder-content .fl-row a.cv-btn-white.cv-btn-large a:hover {
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+a.cv-btn.cv-btn-white a *, a.cv-btn-white.cv-btn-large a *,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-white a *,
+.cv-btn a.cv-btn-white a *,
+a.cv-btn-large a.cv-btn-white a *,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-white a *,
+body .fl-builder-content .fl-row a.cv-btn-white.cv-btn-large a * {
+  color: #0064a3;
+}
+a.cv-btn.cv-btn-lightBlue a, a.cv-btn-lightBlue.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-lightBlue a,
+.cv-btn a.cv-btn-lightBlue a,
+a.cv-btn-large a.cv-btn-lightBlue a,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-lightBlue a,
+body .fl-builder-content .fl-row a.cv-btn-lightBlue.cv-btn-large a {
+  line-height: 1;
+  transition: all 0.15s cubic-bezier(0.5, 0, 0.5, 1);
+  border-radius: 4px;
+  background: #f2f6f9;
+  border-color: #f2f6f9;
+}
+a.cv-btn.cv-btn-lightBlue a:hover, a.cv-btn-lightBlue.cv-btn-large a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-lightBlue a:hover,
+.cv-btn a.cv-btn-lightBlue a:hover,
+a.cv-btn-large a.cv-btn-lightBlue a:hover,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-lightBlue a:hover,
+body .fl-builder-content .fl-row a.cv-btn-lightBlue.cv-btn-large a:hover {
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+a.cv-btn.cv-btn-lightBlue a *, a.cv-btn-lightBlue.cv-btn-large a *,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-lightBlue a *,
+.cv-btn a.cv-btn-lightBlue a *,
+a.cv-btn-large a.cv-btn-lightBlue a *,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-lightBlue a *,
+body .fl-builder-content .fl-row a.cv-btn-lightBlue.cv-btn-large a * {
+  color: #0064a3;
+}
+a.cv-btn.cv-btn-red a, a.cv-btn-red.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-red a,
+.cv-btn a.cv-btn-red a,
+a.cv-btn-large a.cv-btn-red a,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-red a,
+body .fl-builder-content .fl-row a.cv-btn-red.cv-btn-large a {
+  line-height: 1;
+  transition: all 0.15s cubic-bezier(0.5, 0, 0.5, 1);
+  border-radius: 4px;
+  background: #f00053;
+  border-color: #f00053;
+}
+a.cv-btn.cv-btn-red a:hover, a.cv-btn-red.cv-btn-large a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-red a:hover,
+.cv-btn a.cv-btn-red a:hover,
+a.cv-btn-large a.cv-btn-red a:hover,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-red a:hover,
+body .fl-builder-content .fl-row a.cv-btn-red.cv-btn-large a:hover {
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+a.cv-btn.cv-btn-yellow a, a.cv-btn-yellow.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-yellow a,
+.cv-btn a.cv-btn-yellow a,
+a.cv-btn-large a.cv-btn-yellow a,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-yellow a,
+body .fl-builder-content .fl-row a.cv-btn-yellow.cv-btn-large a {
+  line-height: 1;
+  transition: all 0.15s cubic-bezier(0.5, 0, 0.5, 1);
+  border-radius: 4px;
+  background: #f3c100;
+  border-color: #f3c100;
+}
+a.cv-btn.cv-btn-yellow a:hover, a.cv-btn-yellow.cv-btn-large a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-yellow a:hover,
+.cv-btn a.cv-btn-yellow a:hover,
+a.cv-btn-large a.cv-btn-yellow a:hover,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-yellow a:hover,
+body .fl-builder-content .fl-row a.cv-btn-yellow.cv-btn-large a:hover {
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+a.cv-btn.cv-btn-blue a, a.cv-btn-blue.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-blue a,
+.cv-btn a.cv-btn-blue a,
+a.cv-btn-large a.cv-btn-blue a,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-blue a,
+body .fl-builder-content .fl-row a.cv-btn-blue.cv-btn-large a {
+  line-height: 1;
+  transition: all 0.15s cubic-bezier(0.5, 0, 0.5, 1);
+  border-radius: 4px;
+  background: #0064a3;
+  border-color: #0064a3;
+}
+a.cv-btn.cv-btn-blue a:hover, a.cv-btn-blue.cv-btn-large a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.cv-btn-blue a:hover,
+.cv-btn a.cv-btn-blue a:hover,
+a.cv-btn-large a.cv-btn-blue a:hover,
+body .fl-builder-content .fl-row .cv-btn.cv-btn-blue a:hover,
+body .fl-builder-content .fl-row a.cv-btn-blue.cv-btn-large a:hover {
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+a.cv-btn.button--learn-more a, a.button--learn-more.cv-btn-large a,
+body .fl-builder-content .fl-row .cv-btn-large a.button--learn-more a,
+.cv-btn a.button--learn-more a,
+a.cv-btn-large a.button--learn-more a,
+body .fl-builder-content .fl-row .cv-btn.button--learn-more a,
+body .fl-builder-content .fl-row a.button--learn-more.cv-btn-large a {
+  line-height: 1;
+  transition: all 0.15s cubic-bezier(0.5, 0, 0.5, 1);
+  border-radius: 4px;
+  background: var(--color);
+  border-color: var(--color);
+}
+a.cv-btn.button--learn-more a:hover, a.button--learn-more.cv-btn-large a:hover,
+body .fl-builder-content .fl-row .cv-btn-large a.button--learn-more a:hover,
+.cv-btn a.button--learn-more a:hover,
+a.cv-btn-large a.button--learn-more a:hover,
+body .fl-builder-content .fl-row .cv-btn.button--learn-more a:hover,
+body .fl-builder-content .fl-row a.button--learn-more.cv-btn-large a:hover {
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.shadow-sml {
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.center {
+  text-align: center;
+}
+
+@media (max-width: 762px) {
+  .center--mobile,
+.center--mobile * {
+    text-align: center;
+  }
+}
+
+@media (max-width: 762px) {
+  .fl-col-small {
+    max-width: 100%;
+  }
+}
+
+.bg-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.2s;
+  transform: rotateX(-5deg);
+}
+.bg-root[data-active] {
+  transform: none;
+}
+
+.animate-sub-menu-bg {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.15s cubic-bezier(0.5, 0, 0.5, 1), opacity 0.1s linear;
+  transform-origin: 50% 0%;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+
+.bg-root[data-active] .animate-sub-menu-bg {
+  opacity: 1;
+  visibility: visible;
+}
+
+html body .main-header-bar .main-header-menu .menu-item:hover .sub-menu {
+  transition: opacity 0.15s linear;
+  opacity: 0;
+}
+html body .main-header-bar .main-header-menu .menu-item:hover.trigger-enter .sub-menu {
+  visibility: visible;
+}
+html body .main-header-bar .main-header-menu .menu-item:hover.trigger-enter-active .sub-menu {
+  opacity: 1;
+  transition: opacity 0.12s linear;
+}
+
+body .main-header-bar .sub-menu li a {
+  color: #0064a3;
+}
+
+body .main-header-bar {
+  perspective: 200px;
+  line-height: 1 !important;
+}
+body .main-header-bar .main-header-menu .sub-menu {
+  background: transparent;
+  box-shadow: 0 0 0;
+  border-top: 0;
+}
+body .main-header-bar .menu-item a {
+  color: white;
+}
+body .main-header-bar .menu-item a:hover {
+  text-decoration: none;
+  transition: all 0.15s cubic-bezier(0.5, 0, 0.5, 1);
+  transform: translateY(-1px);
+  opacity: 0.8;
+}
+body .main-header-bar .ast-site-title-wrap h1, body .main-header-bar .ast-site-title-wrap .site-title {
+  display: block;
+  height: 50px;
+  width: 200px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-image: url(https://clearviewsoftware.local/wp-content/themes/clearview2019/dist/clearviewlogo.8a3dbe42.svg);
+  background-size: contain;
+  margin-top: 0;
+}
+body .main-header-bar .ast-site-title-wrap h1 a, body .main-header-bar .ast-site-title-wrap .site-title a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.ast-header-break-point .menu-toggle .menu-toggle-icon:before {
+  color: white !important;
+}
+
+.page__hero > .fl-row-content-wrap {
+  background-image: url(https://clearviewsoftware.local/wp-content/themes/clearview2019/dist/secondbg.25bb3b93.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
+.page__hero > .fl-row-content-wrap * {
+  color: white;
+}
+.page__hero > .fl-row-content-wrap h1 {
+  color: white;
+  font-size: 50px;
+}
+.page__hero > .fl-row-content-wrap .cv-btn span, .page__hero > .fl-row-content-wrap a.cv-btn-large span,
+.page__hero > .fl-row-content-wrap body .fl-builder-content .fl-row .cv-btn-large a span,
+body .fl-builder-content .fl-row .cv-btn-large .page__hero > .fl-row-content-wrap a span {
+  color: white;
+}
+
+body .fl-builder-content .page__hero > .fl-row-content-wrap {
+  padding: 150px 20px 30px;
+}
+
+.two-column-flex .supporting-card {
+  position: relative;
+}
+.two-column-flex .supporting-card > div {
+  display: grid;
+  grid-template-columns: 50px 50px 1fr;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .two-column-flex .supporting-card > div {
+    grid-template-columns: 100%;
+    grid-template-rows: 30px 50px 1fr;
+  }
+  .two-column-flex .supporting-card > div .fl-photo-content {
+    max-width: 100px;
+    min-width: auto;
+    grid-row: 1/3;
+  }
+  .two-column-flex .supporting-card > div .fl-module-uabb-heading {
+    position: relative;
+    grid-column: 1/-1;
+    grid-row: 2/4;
+    padding-left: 20px;
+    padding-top: 40px;
+  }
+  .two-column-flex .supporting-card > div .fl-photo-content img {
+    display: block;
+    min-width: 100%;
+  }
+}
+.two-column-flex .supporting-card.no-graphic {
+  width: auto !important;
+  margin-left: 0;
+}
+.two-column-flex .supporting-card.no-graphic > div {
+  display: block;
+}
+.two-column-flex .supporting-card.no-graphic .fl-module-uabb-heading {
+  padding: 0px 20px 0 10px;
+  border-left: 7px solid var(--color);
+}
+.two-column-flex .supporting-card.no-graphic h5 span {
+  color: var(--color);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.two-column-flex .supporting-card .fl-photo-content {
+  z-index: 3;
+  min-width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border-color: var(--border-color, #0064a3);
+  border-width: 6px;
+  border-style: solid;
+}
+.two-column-flex .supporting-card img {
+  transform: scale(1.01);
+}
+.two-column-flex .supporting-card .fl-module-uabb-heading {
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding-left: 70px;
+  grid-column: 2/-1;
+}
+.two-column-flex .supporting-card .fl-module-uabb-heading h5 {
+  font-size: 16px;
+  color: #707070;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.two-column-flex .supporting-card .fl-module-uabb-heading p {
+  font-size: 16px;
+}
+
+.supporting-card.border-yellow {
+  --border-color: var(--yellow);
+}
+.supporting-card.border-red {
+  --border-color: var(--red);
+}
+.supporting-card.border-green {
+  --border-color: var(--primaryGreen);
+}
+.supporting-card.border-purple {
+  --border-color: var(--purple);
+}
+
+/*TODO insert styles for browsers that don't support grid */
+/* styles for browsers that support grid */
+/* @supports (display: grid) {
+  .two-column-grid-wrapper {
+    position: relative;
+  }
+  .two-column-grid {
+
+
+  }
+} */
+.two-column-flex .fl-row-content > .fl-col-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: flex-start;
+}
+.two-column-flex .fl-row-content > .fl-col-group > div {
+  width: 100%;
+}
+.two-column-flex .fl-row-content > .fl-col-group > div:nth-child(even) {
+  margin-left: 5vw;
+}
+@media (max-width: 762px) {
+  .two-column-flex .fl-row-content > .fl-col-group > div:nth-child(even) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 762px) {
+  .two-column-flex .fl-row-content > .fl-col-group {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+.two-column-flex .two-column-flex__content {
+  min-width: 400px;
+  width: 100%;
+}
+@media (max-width: 762px) {
+  .two-column-flex .two-column-flex__content {
+    min-width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.two-column-flex .two-column-flex__image {
+  width: 100%;
+  flex-shrink: 1.4;
+  flex-basis: auto;
+}
+.two-column-flex .two-column-flex__image img {
+  max-height: 500px;
+  width: auto;
+}
+@media (max-width: 762px) {
+  .two-column-flex .two-column-flex__image {
+    flex-shrink: 1;
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-top: 30px;
+  }
+}
+
+.bottom-cta .btn-row .fl-col-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-list-grid .fl-col-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.feature-list-grid .fl-col-group > .fl-col {
+  min-width: 250px;
+}
+
+.feature-list-grid__item > div {
+  --offset: 30px;
+  display: grid;
+  grid-template-columns: var(--offset) var(--offset) 1fr;
+  align-items: center;
+}
+.feature-list-grid__item > div > div {
+  grid-row-start: 1;
+}
+.feature-list-grid__item > div .fl-module-uabb-heading {
+  grid-column: 2/-1;
+  padding-left: calc(var(--offset) + 20px);
+}
+.feature-list-grid__item > div .fl-module-html {
+  grid-column: 1/3;
+  z-index: 1;
+}
+
+.feature-list-grid__item {
+  margin: 0 20px 40px;
+  --color: var(--primaryBlue);
+}
+.feature-list-grid__item.color-green {
+  --color: var(--primaryGreen);
+}
+.feature-list-grid__item.color-red {
+  --color: var(--red);
+}
+.feature-list-grid__item.color-yellow {
+  --color: var(--yellow);
+}
+.feature-list-grid__item.color-purple {
+  --color: var(--purple);
+}
+.feature-list-grid__item .fl-module-uabb-heading {
+  padding: 10px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  z-index: 0;
+}
+.feature-list-grid__item .fl-module-uabb-heading > .fl-module-content {
+  margin: 0;
+}
+.feature-list-grid__item .fl-module-uabb-heading h3 {
+  color: var(--color) !important;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.feature-list-grid__item .fl-module-uabb-heading .uabb-subheading {
+  margin-top: 0;
+}
+.feature-list-grid__item .fl-module-uabb-heading .uabb-subheading p {
+  font-size: 14px;
+}
+
+.overview__feature .overview__icon-col {
+  width: 100% !important;
+}
+.overview__feature h2 span {
+  display: block;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: var(--color);
+  font-size: 20px;
+}
+.overview__feature .overview__feature-icon {
+  width: 70px;
+}
+
+/*# sourceMappingURL=https://clearviewsoftware.local/wp-content/themes/clearview2019/dist/main.css.map */

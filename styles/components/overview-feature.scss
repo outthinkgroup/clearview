@@ -1,0 +1,19 @@
+.overview__feature {
+  .overview__icon-col {
+    width: 100% !important;
+  }
+  h2 {
+    span {
+      display: block;
+      margin: 20px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: var(--color);
+      font-size: 20px;
+    }
+  }
+  .overview__feature-icon {
+    width: 70px;
+  }
+}
