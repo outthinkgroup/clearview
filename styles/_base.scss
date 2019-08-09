@@ -185,3 +185,10 @@ a.cv-btn,
     max-width: $mobileMaxWidth;
   }
 }
+
+/* stupid beaverbuilder tool tips get in the way */
+
+#tiptip_holder {
+  pointer-events: none;
+  transform: translateY(40px);
+}

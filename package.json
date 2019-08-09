@@ -6,8 +6,8 @@
   "author": "outthinkgroup",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel main.js add-shortcuts.js --public-url https://clearviewsoftware.local/wp-content/themes/clearview2019/dist",
-    "build": "parcel build main.js"
+    "dev": "parcel main.js --public-url https://clearviewsoftware.local/wp-content/themes/clearview2019/dist",
+    "build": "parcel build main.js --public-url https://clearview.mightyoak.co/wp-content/themes/clearview2019/dist"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.3"

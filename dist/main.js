@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"/Users/joshkennedy00/sites/dev/clearviewsoftware/app/public/wp-content/themes/clearview2019/images/clearviewlogo.svg":[["clearviewlogo.8a3dbe42.svg","images/clearviewlogo.svg"],"images/clearviewlogo.svg"],"/Users/joshkennedy00/sites/dev/clearviewsoftware/app/public/wp-content/themes/clearview2019/images/secondbg.svg":[["secondbg.25bb3b93.svg","images/secondbg.svg"],"images/secondbg.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"scripts/subnav-animate.js":[function(require,module,exports) {
+},{"/Users/joshkennedy00/sites/dev/clearviewsoftware/app/public/wp-content/themes/clearview2019/images/clearviewlogo--blue.svg":[["clearviewlogo--blue.ee40bd6d.svg","images/clearviewlogo--blue.svg"],"images/clearviewlogo--blue.svg"],"/Users/joshkennedy00/sites/dev/clearviewsoftware/app/public/wp-content/themes/clearview2019/images/clearviewlogo.svg":[["clearviewlogo.8a3dbe42.svg","images/clearviewlogo.svg"],"images/clearviewlogo.svg"],"/Users/joshkennedy00/sites/dev/clearviewsoftware/app/public/wp-content/themes/clearview2019/images/secondbg.svg":[["secondbg.25bb3b93.svg","images/secondbg.svg"],"images/secondbg.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"scripts/subnav-animate.js":[function(require,module,exports) {
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -267,11 +267,124 @@ function initAnimateSubMenu() {
 }
 
 window.addEventListener("load", initAnimateSubMenu);
+},{}],"scripts/single-feature-sidebar.js":[function(require,module,exports) {
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+(function () {
+  function sidebarInit() {
+    //stops script from running if not on a fth SINGLE
+    if (!document.querySelector(".feature-single__wrapper--sidebar")) return; //media Query some functions run or wont run based on window width
+
+    var maxWidth = window.matchMedia("(min-width: 762px)"); //toggle open / close states
+
+    var pageWrapper = document.querySelector(".feature-single__wrapper--sidebar");
+    var toggleBtns = document.querySelectorAll(".toggle__button");
+    /* const mobileToggleBtn = document.querySelector(
+    ".fth-single__mobile-toggle span"
+    ); */
+
+    _toConsumableArray(toggleBtns).forEach(function (toggleBtn) {
+      return toggleBtn.addEventListener("click", handleToggle);
+    });
+    /* mobileToggleBtn.addEventListener("click", handleToggle); */
+
+
+    function handleToggle() {
+      console.log("object");
+      var sideBarState = pageWrapper.dataset.state;
+      var newState = sideBarState === "open" ? "close" : "open";
+      pageWrapper.dataset.state = newState;
+      handleToggleArrow();
+    }
+
+    function setInitialSidebarState(windowWidth) {
+      var pageWrapper = document.querySelector(".feature-single__wrapper--sidebar");
+
+      if (windowWidth.matches) {
+        pageWrapper.dataset.state = "open";
+        handleToggleArrow(); //sets arrow on load
+      } else {
+        pageWrapper.dataset.state = "close";
+        handleToggleArrow(); //sets arrow on load
+      }
+    }
+
+    setInitialSidebarState(maxWidth); //maxWidth is defined on line 3
+
+    maxWidth.addListener(setInitialSidebarState);
+
+    function handleToggleArrow() {
+      var toggleBtn = document.querySelector(".toggle__arrow");
+      console.log(toggleBtn);
+      var toggleState = document.querySelector(".feature-single__wrapper--sidebar").dataset.state;
+      var btnTxt = toggleState === "open" ? "&larr;" : "&rarr;";
+      toggleBtn.innerHTML = btnTxt;
+    }
+
+    function shouldHandleStickyState(windowWidth) {
+      if (windowWidth.matches) {//handleStickyState();
+      } else {
+        return;
+      }
+    }
+
+    shouldHandleStickyState(maxWidth);
+    maxWidth.addListener(shouldHandleStickyState);
+    /* this adds a css variable that centers the content when
+      data-state is closed on the fth-single
+      
+      ? this should probably be rethought ?
+      */
+
+    /* function contentMove() {
+    const content = document.querySelector(".fth-single__content");
+    const pageWidth = Math.max(
+      document.querySelector(".feature-single-page").getBoundingClientRect()
+        .width
+    );
+    const sidebarWidth = document
+      .querySelector(".feature-single__sidebar")
+      .getBoundingClientRect().width;
+    const diff = pageWidth - (pageWidth - sidebarWidth);
+    const move = Math.floor(diff / 2);
+    content.style.setProperty("--contentMove", `-${move}px`);
+    }
+    function contentMoveGrouped() {
+    contentMove();
+    window.addEventListener("resize", contentMove);
+    } */
+    //above function shouldnt run if mobile
+
+    /* function shouldContentMove(windowWidth) {
+    if (windowWidth.matches) {
+      contentMoveGrouped();
+    } else {
+      return;
+    }
+    } */
+    //shouldContentMove(maxWidth); //maxWidth is defined on line 3
+    //maxWidth.addListener(shouldContentMove); //listens to window width
+
+    /* this will set the chapter menu to closed by default */
+
+    /* */
+  }
+
+  window.addEventListener("load", sidebarInit);
+})();
 },{}],"scripts/main.js":[function(require,module,exports) {
 "use strict";
 
 require("./subnav-animate");
-},{"./subnav-animate":"scripts/subnav-animate.js"}],"main.js":[function(require,module,exports) {
+
+require("./single-feature-sidebar");
+},{"./subnav-animate":"scripts/subnav-animate.js","./single-feature-sidebar":"scripts/single-feature-sidebar.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 require("./styles/main.scss");
@@ -305,7 +418,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64259" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60467" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

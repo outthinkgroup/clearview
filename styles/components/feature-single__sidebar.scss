@@ -1,0 +1,173 @@
+/* sidebar */
+
+///this is general styles
+.feature-single__sidebar {
+  transition: transform $timingQuick $easing, opacity $timingQuick linear;
+  opacity: 0;
+  z-index: 3;
+  background: #efefef;
+
+  box-shadow: $smallShadow;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebarWidth, 250px);
+  height: 100vh;
+  .sidebar__wrapper {
+    h3,
+    .sidebar__logo,
+    li {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  h3 {
+    margin-bottom: 30px;
+  }
+  ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: calc(100vh - 200px);
+    overflow-y: scroll !important;
+    padding-bottom: 40px;
+    li {
+      list-style: none;
+      padding: 10px 0;
+    }
+  }
+}
+//sidebar spacing at top
+.feature-single__sidebar {
+  .sidebar__logo {
+    padding-top: calc(32px + 18px); //due to wordpress utility bar
+    padding-bottom: 30px;
+  }
+}
+body:not(.logged-in) .feature-single__sidebar {
+  .sidebar__logo {
+    padding-bottom: 18px;
+    padding-top: 18px;
+  }
+}
+
+//toggle
+.sidebar__toggle {
+  position: fixed;
+  top: 50vh;
+  left: -25px;
+  z-index: 4;
+  transform: translateX(calc(var(--sidebarWidth) - 40px));
+  .toggle__button {
+    border: none;
+    background: transparent;
+    color: white;
+    .toggle-button__wrapper {
+      border-radius: 50%;
+      background: $primaryGreen;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      box-shadow: $largeShadow;
+      width: 50px;
+      height: 50px;
+      display: block;
+      font-size: 30px;
+    }
+    span {
+      display: block;
+    }
+  }
+}
+.sidebar__toggle--mobile {
+  display: none;
+}
+//desktop
+[data-state="close"] {
+  .feature-single__sidebar {
+    transition: transform $timingQuick $easing 0s, opacity $timingAverage linear;
+    transform: translateX(calc(-1 * var(--sidebarWidth)));
+  }
+  .sidebar__toggle {
+    transform: translateX(10px);
+  }
+}
+[data-state="open"] {
+  .feature-single__sidebar {
+    transition: transform $timingQuick $easing,
+      opacity $timingAverage linear 0.1s;
+    opacity: 1;
+  }
+}
+
+//--/--/--/--/--/--/--/--/--/--/--//
+//mobile side bar view
+//--/--/--/--/--/--/--/--/--/--/--//
+//toggles
+@media (max-width: $smallScreen) {
+  [data-state="open"] {
+    .sidebar__toggle {
+      transform: translate(80vw, 20vh);
+    }
+    .sidebar__toggle--mobile {
+      display: none;
+    }
+  }
+  [data-state="close"] {
+    .sidebar__toggle {
+      display: none;
+    }
+    .sidebar__toggle--mobile {
+      display: block;
+      z-index: 99999;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      .toggle__button {
+        border: none;
+        background: transparent;
+        color: white;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+
+        .toggle-button__wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: $primaryGreen;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: $smallScreen) {
+  [data-state="open"] {
+    .feature-single__sidebar {
+      width: 100vw;
+      .sidebar__wrapper {
+        h3,
+        .sidebar__logo,
+        li {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+      }
+    }
+  }
+  [data-state="close"] {
+  }
+}
+
+//footer
+//on mobile so you can see over the mobile toggle
+.feature-single__wrapper--sidebar {
+  .ast-footer-overlay {
+    padding-bottom: 100px;
+  }
+}

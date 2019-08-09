@@ -28,36 +28,17 @@ function child_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 
 
-/* please remove this and add to a plugin */
-/* this adds a shortcut to open up the modules column settings */
-add_filter( 'fl_builder_keyboard_shortcuts', function( $shortcuts ) {
-    $shortcuts['openColumnSettings'] = array(
-        'label' => __( 'opens the column setting of the hovered module', 'my-plugin'),
-        'keyCode' => 'c'
-				);
-		$shortcuts['openParentColumnSettings'] = array(
-        'label' => __( 'opens the parent column setting of the hovered module', 'my-plugin'),
-        'keyCode' => 'C'
-        );
-				
-    return $shortcuts;
-});
-//adds js when bb is loaded
-add_action( 'wp_enqueue_scripts', function() {
-    // Check if Beaver Builder is active 
-    if ( class_exists('FLBuilderModel') && FLBuilderModel::is_builder_active() ) {
 
-        /**
-         * Enqueue your custom JavaScript file
-         *
-         * Be sure to use the appropriate url reference function for whether your 
-         * code is contained in a custom plugin or theme.
-         *
-         * Include fl-builder-min as a dependency for your script to ensure
-         * Beaver Builder as well as jQuery are available when your script runs.
-         */
-        wp_enqueue_script('add-shortcut-open-col', 
-            get_stylesheet_directory_uri() . '/dist/add-shortcuts.js', 
-            array('fl-builder-min') );
-    }
-});
+/* adds logo to login  */
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/full-logo.svg);
+		width:100%;
+		background-size: contain;
+		background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );

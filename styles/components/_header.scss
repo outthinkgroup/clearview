@@ -73,30 +73,45 @@ body .main-header-bar {
       opacity: 0.8;
     }
   }
-
-  //logo stuff
-  .ast-site-title-wrap {
-    h1, .site-title {
-      display:block;
-      height: 50px;
-      width: 200px;
-      position: relative;
-      background-repeat: no-repeat;
-      background-image: url(/images/clearviewlogo.svg);
-      background-size: contain;
-      margin-top: 0;
-      a {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 0;
-        opacity: 0;
-      }
-    }
-  }
 }
 //mobile icon
 .ast-header-break-point .menu-toggle .menu-toggle-icon:before {
   color: white !important;
 }
+/* the logo */
+.site-title,
+.ast-site-title-wrap .site-title h1,
+.ast-site-title-wrap .site-title {
+  display: block;
+  height: 50px;
+  width: 200px;
+  position: relative;
+  background-repeat: no-repeat;
+  //background-image: url(/images/clearviewlogo.svg);
+  background-size: contain;
+  margin-top: 0;
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+//this deals with the templates with the feature sidebar
+[data-state="open"] {
+  .feature-single__sidebar .site-title {
+    background-image: url(/images/clearviewlogo--blue.svg);
+  }
+  .main-header-bar .site-title{
+    display:none;
+  }
+}
+.feature-single__wrapper--sidebar:not([data-state="open"]){
+  .site-title{
+    background-image: url(/images/clearviewlogo.svg);
+  }
+}
+

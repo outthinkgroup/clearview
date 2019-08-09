@@ -1,0 +1,97 @@
+//vars
+:root {
+  --sidebarWidth: 300px;
+}
+.feature-single__wrapper--sidebar {
+  //navigation
+  header {
+    padding: 18px 0;
+    .ast-main-header-bar-alignment {
+      margin-left: 0;
+    }
+    nav .main-navigation {
+      padding-left: var(
+        --paddingLeft,
+        30px
+      ); //this should equal the hero-wrappers padding left
+      .primary-menu > li:first-child a {
+        padding-left: 0;
+      }
+    }
+  }
+
+  ///hero
+  .article__hero {
+    min-height: 50vh;
+    background-image: url(/images/secondbg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    padding-top: 66px;
+  }
+  //layout spacing
+  .feature-single__article section > div {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    padding-left: var(
+      --paddingLeft,
+      30px
+    ); // left padding should equal .main-navigation padding-left
+    &.hero__wrapper {
+      padding: 30px 40px;
+      padding-left: var(--paddingLeft, 30px);
+    }
+    &.content__wrapper {
+      max-width: 700px;
+    }
+  }
+
+  //hero layout
+  .hero__wrapper {
+    display: flex;
+    justify-content: space-between;
+    //align-items:center;
+    .hero-image {
+      max-width: 300px;
+    }
+  }
+  .hero__content {
+    h1 {
+      color: white;
+    }
+  }
+}
+
+.article__content {
+  padding-top: 60px;
+}
+//todo need to create the grid 2 col layout with images see wes bos impossible layout solution
+
+///has to do with data-state of the sidebar
+[data-state="open"].feature-single__wrapper--sidebar {
+  --paddingLeft: 10vw;
+  padding-left: var(--sidebarWidth); //TODO get this dynamically or set to var
+  .ast-container {
+    //dont need these using our layout system
+    padding: 0;
+  }
+}
+.feature-single__wrapper--sidebar:not([data-state="open"]) {
+  --paddingLeft: 80px;
+  padding-left: 0px; //TODO get this dynamically or set to var
+  .main-header-bar .ast-container {
+    padding-left: var(--paddingLeft);
+    max-width: 1100px; // this should be moved to be more general
+  }
+}
+@media (max-width: $smallScreen) {
+  [data-state="open"].feature-single__wrapper--sidebar {
+    padding-left: var(--paddingLeft); //TODO get this dynamically or set to var
+    .main-header-bar .ast-container {
+      padding-left: var(--paddingLeft);
+    }
+  }
+  .feature-single__wrapper--sidebar:not([data-state="open"]) {
+  }
+}
