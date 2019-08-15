@@ -255,15 +255,28 @@ function initAnimateSubMenu() {
     this.classList.remove(".trigger-enter-active");
     bgWrapper.removeAttribute("data-active");
   } //listeners
+  //wrapped in a media query this doesnt run on mobile
 
 
-  _toConsumableArray(triggers).forEach(function (trigger) {
-    //gives each menu item two events
-    trigger.addEventListener("mouseenter", function (e) {
-      return handleEnter(e);
-    });
-    trigger.addEventListener("mouseleave", handleLeave);
-  });
+  function enableAnimatableSubNav(mediaQuery) {
+    if (mediaQuery.matches) {
+      // If media query matches
+      return null;
+    } else {
+      _toConsumableArray(triggers).forEach(function (trigger) {
+        //gives each menu item two events
+        trigger.addEventListener("mouseenter", function (e) {
+          return handleEnter(e);
+        });
+        trigger.addEventListener("mouseleave", handleLeave);
+      });
+    }
+  }
+
+  var mediaQuery = window.matchMedia("(max-width: 921px)");
+  enableAnimatableSubNav(mediaQuery); // Call listener function at run time
+
+  mediaQuery.addListener(enableAnimatableSubNav); // Attach listener function on state changes
 }
 
 window.addEventListener("load", initAnimateSubMenu);

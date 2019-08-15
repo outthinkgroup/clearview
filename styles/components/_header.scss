@@ -96,10 +96,10 @@ body .main-header-bar {
       }
     }
   }
-  .main-header-menu .sub-menu {
+  .main-navigation .main-header-menu .menu-item .sub-menu {
     background: transparent;
     box-shadow: 0 0 0;
-    border-top: 0;
+    border-top: none;
   }
 
   .menu-item a {

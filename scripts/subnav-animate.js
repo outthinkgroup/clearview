@@ -57,10 +57,22 @@ function initAnimateSubMenu() {
     bgWrapper.removeAttribute("data-active");
   }
   //listeners
-  [...triggers].forEach(trigger => {
-    //gives each menu item two events
-    trigger.addEventListener("mouseenter", e => handleEnter(e));
-    trigger.addEventListener("mouseleave", handleLeave);
-  });
+  //wrapped in a media query this doesnt run on mobile
+  function enableAnimatableSubNav(mediaQuery) {
+    if (mediaQuery.matches) {
+      // If media query matches
+      return null;
+    } else {
+      [...triggers].forEach(trigger => {
+        //gives each menu item two events
+        trigger.addEventListener("mouseenter", e => handleEnter(e));
+        trigger.addEventListener("mouseleave", handleLeave);
+      });
+    }
+  }
+
+  var mediaQuery = window.matchMedia("(max-width: 921px)");
+  enableAnimatableSubNav(mediaQuery); // Call listener function at run time
+  mediaQuery.addListener(enableAnimatableSubNav); // Attach listener function on state changes
 }
 window.addEventListener("load", initAnimateSubMenu);

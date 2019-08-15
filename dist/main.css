@@ -859,10 +859,10 @@ body .main-header-bar .ast-main-header-bar-alignment .main-navigation {
     order: 2;
   }
 }
-body .main-header-bar .main-header-menu .sub-menu {
+body .main-header-bar .main-navigation .main-header-menu .menu-item .sub-menu {
   background: transparent;
   box-shadow: 0 0 0;
-  border-top: 0;
+  border-top: none;
 }
 body .main-header-bar .menu-item a {
   color: white;
