@@ -50,7 +50,7 @@ function require_shortcodes_on_init(){
 add_action('init', 'require_shortcodes_on_init');
 
  //cutomize the main menu to add the buttons
-function add_search_form($items, $args) {
+function split_nav_in_two($items, $args) {
 	if( $args->theme_location == 'primary' ){
 	$items .= '</ul><ul class="cv-util-nav">'
 					.	'<li class="menu-item flex-end">'
@@ -62,4 +62,4 @@ function add_search_form($items, $args) {
 	}
 return $items;
 }
-add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
+add_filter('wp_nav_menu_items', 'split_nav_in_two', 10, 2);

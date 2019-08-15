@@ -173,6 +173,10 @@ a.cv-btn,
       //padding: 16px 16px;
     }
   }
+  &.cv-btn--transparent {
+    background: transparent;
+    border: 2px solid currentColor;
+  }
 }
 
 //--/--/--/--/--/--/--/--/--/--/--//

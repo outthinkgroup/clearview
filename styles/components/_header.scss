@@ -1,7 +1,7 @@
-//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
-//Header bar
-//site logo and navigation
-//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//?--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//?Header bar
+//?site logo and navigation
+//?--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
 .bg-root {
   position: absolute;
   top: 0;
@@ -67,10 +67,15 @@ body .main-header-bar {
     }
     .cv-util-nav .menu-item__button-row {
       display: flex;
+      align-items: center;
       .cv-btn {
+        &:not(.cv-btn--transparent) {
+          border: 2px solid $primaryGreen;
+        }
         white-space: nowrap;
-        padding: 15px 15px;
+        padding: 10px 15px 10px;
         font-size: 12px;
+        line-height: 1;
         margin-left: 20px;
       }
       /* @media (max-width: 1050px) {
@@ -80,8 +85,17 @@ body .main-header-bar {
     .main-navigation {
       padding-top: 20px;
       padding-left: 30px;
+      flex-wrap: wrap;
       display: flex;
       justify-content: space-between;
+      @media (max-width: 1040px) {
+        //place where the menu wraps
+        justify-content: flex-end;
+        .main-header-menu {
+          margin-top: 20px;
+          order: 2;
+        }
+      }
     }
   }
   .main-header-menu .sub-menu {
@@ -106,7 +120,113 @@ body .main-header-bar {
 .ast-header-break-point .menu-toggle .menu-toggle-icon:before {
   color: white !important;
 }
-/* the logo */
+.ast-flex.main-header-container {
+  justify-content: space-between;
+}
+
+//--/--/--/--/--/--/--/--/--/--/--//
+// ? all hamburger menu stuff
+//--/--/--/--/--/--/--/--/--/--/--//
+@media (max-width: $mediumScreen) {
+  //this removes the hidden navigation from the flow when the mobile menu is closed
+  .ast-main-header-bar-alignment {
+    position: absolute;
+  }
+  [data-mobile-menu="open"] .ast-main-header-bar-alignment {
+    position: relative;
+  }
+}
+//? /* medium screen and small screen styles for the navigation */
+//anything that is shown when mobil menu is open
+@media (max-width: $mediumScreen) {
+  body .main-header-bar-wrap [data-mobile-menu="open"] {
+    .ast-main-header-bar-alignment {
+      position: absolute;
+      top: 60px;
+      width: 100%;
+    }
+    .main-header-bar-navigation {
+      margin: 0px;
+      width: auto;
+    }
+    .main-navigation {
+      background: white;
+      border-radius: $cardBorderRadius;
+      box-shadow: $largeShadow;
+      padding: 20px;
+      padding-left: 20px;
+      flex-flow: column;
+      align-items: flex-end;
+    }
+    //util nav
+    .menu-item__button-row {
+      max-width: 400px;
+      .cv-btn--transparent {
+        border: 2px solid $primaryBlue;
+        color: $primaryBlue;
+      }
+    }
+    .main-navigation .main-header-menu {
+      width: 100%;
+      flex-direction: column;
+      background: none;
+      a {
+        border: none;
+        width: auto;
+      }
+      button.ast-menu-toggle {
+        position: relative !important;
+        &:focus,
+        &:hover {
+          transform: translateY(-2px);
+          border: none;
+        }
+        &:active {
+          outline: none;
+          transform: translateY(1px);
+          border: none;
+        }
+        &:focus {
+          border-bottom: 1px solid $primaryBlue;
+        }
+      }
+    }
+    .menu-item {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      flex-direction: row;
+      .sub-menu {
+        width: 100%;
+      }
+    }
+    .main-header-menu .menu-item a {
+      color: $primaryBlue;
+    }
+  }
+}
+
+//?end of all the mobile, tablet specific stuff
+
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
+//?this deals with the templates with the feature sidebar
+[data-state="open"] {
+  .feature-single__sidebar .site-title {
+    background-image: url(/images/clearviewlogo--blue.svg);
+  }
+  .main-header-bar .site-title {
+    display: none;
+  }
+}
+.feature-single__wrapper--sidebar:not([data-state="open"]),
+.ast-site-title-wrap {
+  .site-title {
+    background-image: url(/images/clearviewlogo.svg);
+  }
+}
+//👆that deals with the templates with the feature sidebar
+
+//?/* the logo */
 .site-title,
 .ast-site-title-wrap .site-title h1,
 .ast-site-title-wrap .site-title {
@@ -132,20 +252,3 @@ body .main-header-bar {
     opacity: 0;
   }
 }
-
-//this deals with the templates with the feature sidebar
-[data-state="open"] {
-  .feature-single__sidebar .site-title {
-    background-image: url(/images/clearviewlogo--blue.svg);
-  }
-  .main-header-bar .site-title {
-    display: none;
-  }
-}
-.feature-single__wrapper--sidebar:not([data-state="open"]),
-.ast-site-title-wrap {
-  .site-title {
-    background-image: url(/images/clearviewlogo.svg);
-  }
-}
-//👆that deals with the templates with the feature sidebar
