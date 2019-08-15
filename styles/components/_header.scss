@@ -78,9 +78,6 @@ body .main-header-bar {
         line-height: 1;
         margin-left: 20px;
       }
-      /* @media (max-width: 1050px) {
-        flex-direction: column;
-      } */
     }
     .main-navigation {
       padding-top: 20px;
@@ -88,7 +85,8 @@ body .main-header-bar {
       flex-wrap: wrap;
       display: flex;
       justify-content: space-between;
-      @media (max-width: 1040px) {
+      @media (max-width: $mediumScreen) {
+        //if there are more nav items the media query should width should increase
         //place where the menu wraps
         justify-content: flex-end;
         .main-header-menu {

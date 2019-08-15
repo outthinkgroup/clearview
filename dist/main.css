@@ -828,9 +828,6 @@ body .main-header-bar .ast-main-header-bar-alignment #primary-menu {
 body .main-header-bar .ast-main-header-bar-alignment .cv-util-nav .menu-item__button-row {
   display: flex;
   align-items: center;
-  /* @media (max-width: 1050px) {
-    flex-direction: column;
-  } */
 }
 body .main-header-bar .ast-main-header-bar-alignment .cv-util-nav .menu-item__button-row .cv-btn, body .main-header-bar .ast-main-header-bar-alignment .cv-util-nav .menu-item__button-row a.cv-btn-large,
 body .main-header-bar .ast-main-header-bar-alignment .cv-util-nav .menu-item__button-row .fl-builder-content .fl-row .cv-btn-large a,
@@ -853,7 +850,7 @@ body .main-header-bar .ast-main-header-bar-alignment .main-navigation {
   display: flex;
   justify-content: space-between;
 }
-@media (max-width: 1040px) {
+@media (max-width: 921px) {
   body .main-header-bar .ast-main-header-bar-alignment .main-navigation {
     justify-content: flex-end;
   }
