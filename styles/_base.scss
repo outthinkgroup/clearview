@@ -74,6 +74,22 @@ strong {
   font-weight: 700;
 }
 
+//reusable type treatments
+
+.header-tag {
+  h2 {
+    span {
+      display: block;
+      margin: 20px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: var(--color);
+      font-size: 20px;
+    }
+  }
+}
+
 //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
 //links
 //--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--/--//
@@ -162,6 +178,12 @@ a.cv-btn,
 //--/--/--/--/--/--/--/--/--/--/--//
 //Quick helper classes to add quick styling
 //--/--/--/--/--/--/--/--/--/--/--//
+.flex-row {
+  //apply to columns
+  > .fl-col-content {
+    @include flexRow();
+  }
+}
 .shadow-sml {
   box-shadow: $smallShadow;
 }
@@ -174,6 +196,17 @@ a.cv-btn,
   @media (max-width: $smallScreen) {
     text-align: center;
   }
+}
+
+//elements that need to use the color var
+.useColor--border-top {
+  //all border top like classes that need to use this var
+  .uabb-module-content .uabb-separator {
+    border-top-color: var(--color);
+  }
+}
+.useColor--svg {
+  fill: var(--color);
 }
 
 //--/--/--/--/--/--/--/--/--/--/--//

@@ -58,6 +58,32 @@ body .main-header-bar {
   line-height: 1 !important;
   //navigation stuf
 
+  /* styles to get seperation of demo btns and nav links */
+  .ast-main-header-bar-alignment {
+    width: calc(100% - 200px);
+    #primary-menu {
+      //nav links
+      flex-wrap: nowrap;
+    }
+    .cv-util-nav .menu-item__button-row {
+      display: flex;
+      .cv-btn {
+        white-space: nowrap;
+        padding: 15px 15px;
+        font-size: 12px;
+        margin-left: 20px;
+      }
+      /* @media (max-width: 1050px) {
+        flex-direction: column;
+      } */
+    }
+    .main-navigation {
+      padding-top: 20px;
+      padding-left: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
   .main-header-menu .sub-menu {
     background: transparent;
     box-shadow: 0 0 0;
@@ -74,7 +100,9 @@ body .main-header-bar {
     }
   }
 }
-//mobile icon
+
+//? mobile icon
+//this maybe should be more specific to thins with blue bg
 .ast-header-break-point .menu-toggle .menu-toggle-icon:before {
   color: white !important;
 }
@@ -85,6 +113,11 @@ body .main-header-bar {
   display: block;
   height: 50px;
   width: 200px;
+  @media (max-width: $smallScreen) {
+    width: 100px;
+    height: 50px;
+    background-position: center center;
+  }
   position: relative;
   background-repeat: no-repeat;
   //background-image: url(/images/clearviewlogo.svg);
@@ -105,13 +138,14 @@ body .main-header-bar {
   .feature-single__sidebar .site-title {
     background-image: url(/images/clearviewlogo--blue.svg);
   }
-  .main-header-bar .site-title{
-    display:none;
+  .main-header-bar .site-title {
+    display: none;
   }
 }
-.feature-single__wrapper--sidebar:not([data-state="open"]){
-  .site-title{
+.feature-single__wrapper--sidebar:not([data-state="open"]),
+.ast-site-title-wrap {
+  .site-title {
     background-image: url(/images/clearviewlogo.svg);
   }
 }
-
+//👆that deals with the templates with the feature sidebar

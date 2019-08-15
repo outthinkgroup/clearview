@@ -1,0 +1,25 @@
+.cv-post-row {
+  .fl-post-grid-post {
+    border: none;
+    background: transparent;
+    padding: 5px;
+    .fl-post-grid-text {
+      padding: 20px 0;
+      h2 a {
+        font-weight: 300;
+      }
+    }
+    .fl-post-grid-image {
+      height: 150px;
+      border-radius: $cardBorderRadius;
+      box-shadow: $smallShadow;
+      overflow: hidden;
+      img {
+        width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}

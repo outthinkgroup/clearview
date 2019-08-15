@@ -1,0 +1,29 @@
+.cv-faq {
+  .fl-accordion {
+    .fl-accordion-item {
+      background: white;
+      border-radius: $cardBorderRadius;
+      border-left: 8px solid var(--color);
+      box-shadow: $smallShadow;
+
+      .fl-accordion-button {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .fl-accordion-button-icon {
+          color: var(--color);
+          margin-right: 30px;
+          opacity: 1;
+        }
+      }
+
+      .fl-accordion-content {
+        padding-left: 45px;
+        p {
+          border-top: 1px solid #a5a4a4;
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+}

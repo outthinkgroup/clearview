@@ -1,0 +1,52 @@
+.fl-builder .cv-team-card {
+  max-width: 250px;
+  background: white;
+  border-radius: $cardBorderRadius;
+  box-shadow: $smallShadow;
+  &::before {
+    content: "";
+    display: none;
+  }
+  &:nth-child(2n) {
+    margin: 0 20px;
+  }
+  & > .fl-col-content {
+    padding: 20px;
+    .fl-module-content {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .fl-photo {
+    margin: 0 auto;
+    width: 150px;
+  }
+  .uabb-subheading {
+    color: $primaryGreen;
+  }
+}
+.cv-team-row {
+  .fl-col-group {
+    &::before,
+    &::after {
+      content: "";
+      display: none;
+    }
+    display: flex;
+    min-width: 100%;
+    width: 100%;
+    justify-content: space-between;
+    @media (max-width: 450px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 30px;
+      > div {
+        margin-bottom: 20px;
+        max-width: 100%;
+        width: 100%;
+        min-width: 100%;
+      }
+    }
+  }
+}

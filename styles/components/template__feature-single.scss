@@ -2,6 +2,11 @@
 :root {
   --sidebarWidth: 300px;
 }
+@media (max-width: $smallScreen) {
+  .logged-in .feature-single__wrapper--sidebar {
+    margin-top: -46px;
+  }
+}
 .feature-single__wrapper--sidebar {
   //navigation
   header {
@@ -51,14 +56,29 @@
   .hero__wrapper {
     display: flex;
     justify-content: space-between;
-    //align-items:center;
-    .hero-image {
-      max-width: 300px;
+    align-items: center;
+    flex-wrap: nowrap;
+    @media (max-width: $mediumScreen) {
+      flex-wrap: wrap;
+    }
+    .hero__image {
+      max-width: 500px;
+      width: 100%;
+      min-width: 250px;
     }
   }
   .hero__content {
+    width: 100%;
+    margin-bottom: 30px;
     h1 {
       color: white;
+    }
+    @media (max-width: $mediumScreen) {
+      h1 {
+        text-align: center;
+      }
+      text-align: center;
+      margin: 0 auto;
     }
   }
 }
@@ -71,6 +91,7 @@
 ///has to do with data-state of the sidebar
 [data-state="open"].feature-single__wrapper--sidebar {
   --paddingLeft: 10vw;
+  transition: all 0.15s linear;
   padding-left: var(--sidebarWidth); //TODO get this dynamically or set to var
   .ast-container {
     //dont need these using our layout system
@@ -78,6 +99,7 @@
   }
 }
 .feature-single__wrapper--sidebar:not([data-state="open"]) {
+  transition: all 0.15s linear;
   --paddingLeft: 80px;
   padding-left: 0px; //TODO get this dynamically or set to var
   .main-header-bar .ast-container {
@@ -87,11 +109,21 @@
 }
 @media (max-width: $smallScreen) {
   [data-state="open"].feature-single__wrapper--sidebar {
-    padding-left: var(--paddingLeft); //TODO get this dynamically or set to var
+    padding-left: 0; //TODO get this dynamically or set to var
     .main-header-bar .ast-container {
       padding-left: var(--paddingLeft);
     }
   }
   .feature-single__wrapper--sidebar:not([data-state="open"]) {
+    --paddingLeft: 40px;
+  }
+}
+@media (min-width: 1000px) {
+  [data-state="close"].feature-single__wrapper--sidebar,
+  [data-state="open"].feature-single__wrapper--sidebar {
+    --paddingLeft: 40px;
+    .content__wrapper {
+      padding: 0;
+    }
   }
 }

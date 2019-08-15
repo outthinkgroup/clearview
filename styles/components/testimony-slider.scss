@@ -1,0 +1,69 @@
+.testimony-slider {
+  .bx-viewport {
+    //overflow-y: visible !important;
+    padding-bottom: 10px;
+    padding-right: 5px;
+  }
+  .fl-post-carousel-wrapper {
+    meta {
+      display: none; //gets rid of the meta stuff from the layout
+    }
+    div[itemprop] {
+      display: none; //gets rid of the meta stuff from the layout
+    }
+    .fl-post-carousel-post {
+      border: none;
+    }
+    .fl-post-carousel-text {
+      background: $lightBlue;
+      border: none;
+      box-shadow: $smallShadow;
+      border-radius: $cardBorderRadius;
+    }
+    .fl-photo-content {
+      overflow: hidden;
+      border-radius: 50%;
+      border: 4px solid $primaryGreen;
+      img {
+        transform: scale(1.05);
+      }
+      @media (max-width: $smallScreen) {
+        max-width: 100px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+@supports (display: grid) {
+  //only grid specific layout stuff
+  .testimony-slider .fl-post-carousel-wrapper .fl-post-carousel-post {
+    --overlap: 50px;
+    display: grid;
+    grid-template: 1fr / var(--overlap) var(--overlap) 1fr;
+    align-items: flex-start;
+    > .fl-post-carousel-text {
+      grid-column: 2/-1;
+      grid-row: 1/2;
+      padding-left: calc(var(--overlap) + 20px);
+    }
+    > .fl-post-carousel-image {
+      z-index: 2;
+      grid-row: 1/2;
+      grid-column: 1/3;
+    }
+    @media (max-width: $smallScreen) {
+      //mobile styles for card
+      grid-template: var(--overlap) var(--overlap) 1fr / 1fr;
+      > .fl-post-carousel-text {
+        grid-column: 1/-1;
+        grid-row: 2/4;
+        padding-top: calc(var(--overlap) + 20px);
+      }
+      > .fl-post-carousel-image {
+        z-index: 2;
+        grid-row: 1/3;
+        grid-column: 1/-1;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.fl-builder .side-scroll-list {
+  overflow: scroll; //allows for the side scrolling
+  ul.uabb-info-list-wrapper {
+    display: flex; //sets it to be a never ending row
+    > li {
+      min-width: 330px;
+      margin-right: 100px;
+    }
+    .uabb-info-list-content {
+      width: 100%; //removing :default styles
+    }
+  }
+}
+.fl-builder .timeline {
+  h3 {
+    margin-bottom: 100px;
+  }
+  h3::after {
+    content: "";
+    position: absolute;
+    height: 45px;
+    width: 1px;
+    left: 0;
+    top: 170%;
+    background: #999;
+  }
+}

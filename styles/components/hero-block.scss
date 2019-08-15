@@ -14,6 +14,9 @@
   h1 {
     color: white;
     font-size: 50px;
+    @media (max-width: $smallScreen) {
+      font-size: 38px;
+    }
   }
   .cv-btn {
     & span {
@@ -21,6 +24,18 @@
     }
   }
 }
-body .fl-builder-content .page__hero > .fl-row-content-wrap {
-  padding: 150px 20px 30px;
+body .fl-builder-content .page__hero {
+  > .fl-row-content-wrap {
+    padding: 150px 20px 30px;
+  }
+  &.single-template {
+    > .fl-row-content-wrap {
+      @media (min-width: 1300px) {
+        padding: 150px 20px 275px;
+      }
+      @media (max-width: $smallScreen) {
+        padding: 75px 20px;
+      }
+    }
+  }
 }

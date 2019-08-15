@@ -1,0 +1,37 @@
+.resource-slider {
+  .bx-viewport {
+    padding: 10px;
+  }
+  .fl-post-carousel-post {
+    border: none;
+    border-top: 8px solid var(--color);
+    border-radius: $cardBorderRadius;
+    box-shadow: $smallShadow;
+    a {
+      color: var(--color);
+    }
+  }
+  //custom tag list
+  .resource-slider__taglist {
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    li {
+      list-style: none;
+      background: var(--color, $primaryBlue);
+      border-radius: $borderRadius;
+      padding: 10px;
+      line-height: 0;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      a {
+        font-size: 12px;
+        color: white;
+      }
+    }
+  }
+}

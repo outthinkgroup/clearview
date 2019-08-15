@@ -42,3 +42,24 @@ function my_login_logo() { ?>
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+//gets all shortcodes
+function require_shortcodes_on_init(){
+	require(dirname( __FILE__ ) . '/shortcodes/all_shortcodes.php');
+}
+add_action('init', 'require_shortcodes_on_init');
+
+ //cutomize the main menu to add the buttons
+function add_search_form($items, $args) {
+	if( $args->theme_location == 'primary' ){
+	$items .= '</ul><ul class="cv-util-nav">'
+					.	'<li class="menu-item flex-end">'
+					. '<div class="menu-item__button-row">'
+					. '<a class="cv-btn cv-btn--transparent">Client Login</a>'
+					. '<a class="cv-btn">Get a Demo</a>'
+					. '</div>'
+					. '</li>';
+	}
+return $items;
+}
+add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
