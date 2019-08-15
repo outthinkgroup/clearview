@@ -85,7 +85,7 @@ body .main-header-bar {
       flex-wrap: wrap;
       display: flex;
       justify-content: space-between;
-      @media (max-width: $mediumScreen) {
+      @media (max-width: 979px) {
         //if there are more nav items the media query should width should increase
         //place where the menu wraps
         justify-content: flex-end;

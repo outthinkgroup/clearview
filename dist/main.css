@@ -850,7 +850,7 @@ body .main-header-bar .ast-main-header-bar-alignment .main-navigation {
   display: flex;
   justify-content: space-between;
 }
-@media (max-width: 921px) {
+@media (max-width: 979px) {
   body .main-header-bar .ast-main-header-bar-alignment .main-navigation {
     justify-content: flex-end;
   }
