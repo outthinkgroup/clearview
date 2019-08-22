@@ -1738,7 +1738,7 @@ body:not(.logged-in) .feature-single__sidebar .sidebar__logo {
   list-style: none;
   background: var(--color, #0064a3);
   border-radius: 4px;
-  padding: 10px;
+  padding: 5px 10px;
   line-height: 0;
   margin-right: 5px;
   margin-bottom: 5px;
@@ -1746,6 +1746,7 @@ body:not(.logged-in) .feature-single__sidebar .sidebar__logo {
 .resource-slider .resource-slider__taglist li a {
   font-size: 12px;
   color: white;
+  line-height: 1;
 }
 
 .cv-footer-links ul {

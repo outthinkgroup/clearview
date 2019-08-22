@@ -31,6 +31,7 @@ get_header();
         </div>
 
       </section>
+      
     </div>
   </main>
   <div class="feature-single__sidebar"  data-stick="false"><!-- wrapper --> <!-- will recieve data-sticky -->

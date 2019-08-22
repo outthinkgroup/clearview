@@ -4,6 +4,7 @@
   }
   .fl-post-carousel-post {
     border: none;
+    //min-width: 250px;
     border-top: 8px solid var(--color);
     border-radius: $cardBorderRadius;
     box-shadow: $smallShadow;
@@ -24,13 +25,14 @@
       list-style: none;
       background: var(--color, $primaryBlue);
       border-radius: $borderRadius;
-      padding: 10px;
+      padding: 5px 10px;
       line-height: 0;
       margin-right: 5px;
       margin-bottom: 5px;
       a {
         font-size: 12px;
         color: white;
+        line-height: 1;
       }
     }
   }

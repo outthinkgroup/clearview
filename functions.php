@@ -56,7 +56,7 @@ function split_nav_in_two($items, $args) {
 					.	'<li class="menu-item flex-end">'
 					. '<div class="menu-item__button-row">'
 					. '<a class="cv-btn cv-btn--transparent">Client Login</a>'
-					. '<a class="cv-btn">Get a Demo</a>'
+					. '<a class="cv-btn get_demo_trigger">Get a Demo</a>'
 					. '</div>'
 					. '</li>';
 	}
