@@ -40,6 +40,10 @@ html body .main-header-bar .main-header-menu .menu-item:hover {
   .sub-menu {
     transition: opacity 0.15s linear;
     opacity: 0;
+    @media (max-width: $mediumScreen) {
+      //we arent doing the fancy animation styles on mobile so set this back to normal
+      opacity: 1;
+    }
   }
   &.trigger-enter .sub-menu {
     visibility: visible;
@@ -214,6 +218,13 @@ body .main-header-bar {
   }
   .main-header-bar .site-title {
     display: none;
+  }
+  .ast-flex.main-header-container {
+    justify-content: flex-start;
+    padding-right: 20px;
+    .ast-main-header-bar-alignment {
+      width: 100%;
+    }
   }
 }
 .feature-single__wrapper--sidebar:not([data-state="open"]),

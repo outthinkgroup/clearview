@@ -2,37 +2,42 @@
 
 .arrow-list {
   .uabb-list-icon {
-    .uabb-list-icon-wrap .uabb-callout-outter {
-      //removes extra spacing
-      margin: 0;
-    }
-    .uabb-list-icon-text-heading {
-      //the heading or list item
-      //aligns custom icon and text
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      a {
-        color: var(--color);
+    .uabb-list-icon-wrap {
+      margin-left: 10px;
+      .uabb-callout-outter {
+        //removes extra spacing
+        margin: 0;
+      }
+      .uabb-list-icon-text-heading {
+        //the heading or list item
+        //aligns custom icon and text
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        a {
+          color: var(--color);
+          text-transform: capitalize;
+        }
       }
     }
+    // styles the custom svg icon and gives a round bg with the color of var --color
     .uabb-list-icon-text-heading:before {
-      // styles the custom svg icon and gives a round bg with the color of var --color
-      margin-right: 20px;
-      padding: 40px;
-      padding-top: 42px;
-      padding-left: 42px;
-      padding-bottom: 38px;
+      transform: scale(01) translateY(1px) translateX(-5px);
+
+      margin-right: 10px;
+      padding: 17px;
+      padding-top: 14px;
+      padding-left: 18px;
+      padding-bottom: 21px;
       background: var(--color);
       display: flex;
-      height: 0;
-      width: 0;
+      height: 0px;
+      width: 0px;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      transform: scale(0.6) translateY(4px) translateX(-5px);
 
-      content: url('data:image/svg+xml; utf8, <svg width="30px" fill="white" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425.71 379.4"><title>list-arrow-icon</title><path d="M58.75,369.79a35.16,35.16,0,0,1-24.34,9.61,35.14,35.14,0,0,1-24.34-9.61,31.85,31.85,0,0,1,0-46.48L150,189.7,10.07,56.09a31.85,31.85,0,0,1,0-46.48,35.64,35.64,0,0,1,48.68,0l154.49,147.5a44.62,44.62,0,0,1,0,65.19ZM411.57,222.3,257.28,369.59A35,35,0,0,1,233,379.22h-.37a34.92,34.92,0,0,1-24.48-10.11,32,32,0,0,1,.49-46L348.34,189.7,208.6,56.28a32,32,0,0,1-.51-46,35.57,35.57,0,0,1,49.19-.49l154.29,147.3a44.64,44.64,0,0,1,0,65.19Z"/></svg>');
+      content: url('data:image/svg+xml; utf8, <svg width="10px" fill="white" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425.71 379.4"><title>list-arrow-icon</title><path d="M58.75,369.79a35.16,35.16,0,0,1-24.34,9.61,35.14,35.14,0,0,1-24.34-9.61,31.85,31.85,0,0,1,0-46.48L150,189.7,10.07,56.09a31.85,31.85,0,0,1,0-46.48,35.64,35.64,0,0,1,48.68,0l154.49,147.5a44.62,44.62,0,0,1,0,65.19ZM411.57,222.3,257.28,369.59A35,35,0,0,1,233,379.22h-.37a34.92,34.92,0,0,1-24.48-10.11,32,32,0,0,1,.49-46L348.34,189.7,208.6,56.28a32,32,0,0,1-.51-46,35.57,35.57,0,0,1,49.19-.49l154.29,147.3a44.64,44.64,0,0,1,0,65.19Z"/></svg>');
     }
   }
 }
