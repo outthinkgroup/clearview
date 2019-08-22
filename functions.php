@@ -55,7 +55,7 @@ function split_nav_in_two($items, $args) {
 	$items .= '</ul><ul class="cv-util-nav">'
 					.	'<li class="menu-item flex-end">'
 					. '<div class="menu-item__button-row">'
-					. '<a class="cv-btn cv-btn--transparent">Client Login</a>'
+					. '<a class="cv-btn cv-btn--transparent" href="https://support.clearviewsoftware.net/LogOn?returnUrl=/">Client Login</a>'
 					. '<a class="cv-btn get_demo_trigger">Get a Demo</a>'
 					. '</div>'
 					. '</li>';

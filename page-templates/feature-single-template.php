@@ -17,7 +17,7 @@ get_header();
         <div class="hero__wrapper">
           <div class="hero__content">
             <h1><?php echo the_title(); ?></h1>
-            <a href="#" class="cv-btn">Get A Demo</a>
+            <a href="#" class="cv-btn get_a_demo_trigger">Get A Demo</a>
           </div>
           <div class="hero__image">
             <!-- this should pullin the featured image -->
