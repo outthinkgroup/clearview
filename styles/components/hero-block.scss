@@ -14,8 +14,11 @@
   h1 {
     color: white;
     font-size: 50px;
-    @media (max-width: $smallScreen) {
+    @media (max-width: $mediumScreen) {
       font-size: 38px;
+    }
+    @media (max-width: $smallScreen) {
+      font-size: 28px;
     }
   }
   .cv-btn {
@@ -27,6 +30,12 @@
 body .fl-builder-content .page__hero {
   > .fl-row-content-wrap {
     padding: 150px 20px 30px;
+    @media (max-width: $smallScreen) {
+      padding: 100px 20px 30px;
+    }
+    @media (max-width: $phoneScreen) {
+      padding: 80px 20px 30px;
+    }
   }
   &.single-template {
     > .fl-row-content-wrap {

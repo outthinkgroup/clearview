@@ -1033,10 +1033,16 @@ body .main-header-bar .menu-item a:hover {
   color: white;
   font-size: 50px;
 }
-@media (max-width: 762px) {
+@media (max-width: 921px) {
   .page__hero > .fl-row-content-wrap h1,
 .page__hero > .hero__wrapper h1 {
     font-size: 38px;
+  }
+}
+@media (max-width: 762px) {
+  .page__hero > .fl-row-content-wrap h1,
+.page__hero > .hero__wrapper h1 {
+    font-size: 28px;
   }
 }
 .page__hero > .fl-row-content-wrap .cv-btn span, .page__hero > .fl-row-content-wrap a.cv-btn-large span,
@@ -1051,6 +1057,16 @@ body .fl-builder-content .fl-row .cv-btn-large .page__hero > .hero__wrapper a sp
 
 body .fl-builder-content .page__hero > .fl-row-content-wrap {
   padding: 150px 20px 30px;
+}
+@media (max-width: 762px) {
+  body .fl-builder-content .page__hero > .fl-row-content-wrap {
+    padding: 100px 20px 30px;
+  }
+}
+@media (max-width: 500px) {
+  body .fl-builder-content .page__hero > .fl-row-content-wrap {
+    padding: 80px 20px 30px;
+  }
 }
 @media (min-width: 1300px) {
   body .fl-builder-content .page__hero.single-template > .fl-row-content-wrap {
